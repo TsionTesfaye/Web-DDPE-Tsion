@@ -5,6 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>life-hack</title>
+    <script>
+      function toConfirm(){
+        let text;
+        let confirmation = prompt("PLease confirm that you agree to our conditions by giving your name ");
+        if (confirmation == null || person == "") {
+        text = "User cancelled the prompt.";
+  } else {
+    text =  person + "you have registered by agreeing to our terms and conditions";
+      }
+      document.write(text);
+    }
+    function highlightNothing() {
+				console.log("Blur on password")
+			}
+
+			//On Submit
+			function validateForm() {
+				if(document.getElementById("name").value.trim() == ""){
+					alert("Enter Username");
+					console.log("Username is Empty");
+					return false;
+				}
+				else if(document.getElementById("pass").value.trim() == ""){
+					alert("Enter password");
+					console.log("Password Empty");
+					return false;
+				}
+				else {
+					alert("Logged in");
+				}
+			}
+
+			//onSelect
+			function selectFunction() {
+				alert("Username selected");
+				console.log("Selected Username");
+			}
+    </script>
 </head>
 <body>
     <table>
@@ -42,9 +80,9 @@
             <input type="radio" id="gender" /><label for="female">Female</label
     ><br />
     <label for="password">Password</label><br />
-            <input type="password" id="password" minlength="6" maxlength="32" required size="50%" /><br />
+            <input type="password" id="password" minlength="6" maxlength="32" required size="50%" onblur="highlightNothing()" /><br />
             <label for=" password ">Confirm Password</label><br />
-            <input type="password " id="password " minlength="6 " maxlength="32 " required size="50%" /><br />
+            <input type="password " id="password " minlength="6 " maxlength="32 " required size="50%" onblur="highlightNothing()"> /><br />
 
             <label for="skills">Skills</label><br />
             <ul>
@@ -84,7 +122,8 @@
                     <label for="describe">Describe Yourself</label><br />
                     <textarea id="describe" rows="8" cols="50%" placeholder="Say Something"></textarea
     ><br />
-    <input type="submit" value="Submit" />
+   
+    <input onclick = "toConfirm()" type="submit" value="Submit" />
     <input type="Reset" />
   </form>
 

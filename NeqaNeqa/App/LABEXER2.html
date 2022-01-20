@@ -6,6 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>life-hack</title>
+    <script>
+        function playDetect() {
+    console.log("Media playing");
+    alert("playing");
+}
+
+function pauseDetect() {
+    console.log("Media paused");
+    alert("paused");
+}
+    </script>
 </head>
 
 
@@ -104,8 +115,7 @@ insights? The True Believer is an influential book. Here is how <a href="wikiped
     Jack Ma - How I Overcame Failure
 </h2>
 
-<audio 
-src="../resources/audio/Jack Ma - How I Overcame Failure.mp3" loop controls>
+<audio src = "../resources/audio/Jack Ma - How I Overcame Failure.mp3 " Loop controls onplay="playDetect()" onpause="pauseDetect()" >
 </audio>
 
 <hr>
@@ -116,7 +126,7 @@ Pick of The Week
 <h2>
 24 Hours A Day
 </h2>
-<video src="../resources/video/24_HOURS.mp4" width="480" height ="320" muted loop controls >
+<video src="../resources/video/24_HOURS.mp4" width="480" height ="320" muted loop controls onplay="playDetect()" onpause="pauseDetect()" >
 </video>
 
 </td>

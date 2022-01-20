@@ -5,6 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>life-hack</title>
+    <script>
+    function checkEmail() {
+      let pw = document.getElementById("Username").value;
+      var at = pw.split("");
+      console.log("sqh")
+      var count = 0;
+  
+      for (var i = 0; i < at.length; i++) {
+  
+          if (at[i] === "@") {
+              count++;
+          }
+      }
+      if (count == 0) {
+          document.getElementById("emessage").innerHTML = "Not on Email format";
+      }
+      else {
+  
+          document.getElementById("emessage").innerHTML = "";
+      }
+  
+  }
+  </script>
 </head>
 <body>
     <table>
@@ -34,7 +57,7 @@
             <input type="email" name="username" placeholder="email" /><br />
             <label for="password">Password</label>
             <input type="password" name="password" placeholder="password" minlength="6" maxlength="32" required /><br />
-            <input type="button" value="Sign In" />
+            <button onclick="checkEmail()" type="submit">Signin</button>
         </form>
         <iframe id="inlineFrame"
           title="Google Maps"
