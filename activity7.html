@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      div {
+        margin: 20px auto 20px auto;
+         max-width: 400px;
+         max-height: 400px;
+        
+      }
+     
+     #view{
+          margin: 20px auto 20px auto;
+         max-width: 400px;
+         max-height: 400px;
+         border: 20px solid brown;
+      }
+
+   </style>
+</head>
+<body>
+   <div>
+<form>
+   <label for="fullName">Full Name</label><br />
+   <input type= "text" placeholder="Name" id = "fullName"/><br />
+   <label >Age</label><br />
+   <input placeholder = "Age" id = "age"/><br />
+   <label for="number">Phone</label><br />
+   <input placeholder = "Phone number" id="number"/><br />
+</form>
+<br />
+<button id= "submit" >Submit</button>
+
+   </div>
+  <div id= view >
+
+
+   </div>
+   <script>
+const  func = function () {
+    function Display() {
+        this.fullName = document.getElementById('fullName').value;
+        this.phone = document.getElementById('number').value;
+        this.age = document.getElementById('age').value;
+
+
+    }
+    var  newObject = new  Display();
+
+    var divView = function () {
+        view = document.getElementById('view');
+        const div = document.createElement('div');
+        div.classList.add('appended');
+        div.innerHTML = `<h1>Full Name: ${newObject.fullName}</h1><h1>Age: ${newObject.age}</h1><h1>PhoneNo.: ${newObject.phone}</h1>`;
+        view.appendChild(div);
+    }
+     divView();
+}
+
+
+document.getElementById('submit').addEventListener('click', func);
+      
+   </script>
+   
+</body>
+</html>
+
